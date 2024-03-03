@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Functions</title>
+</head>
+
+<body>
+    <h1>Functions</h1>
+    <p>Please load this file in VSCode and Chrome, and open the Console in Chrome Dev Tools.</p>
+    <p>Work through the challenges found inside the script tag in this document,
+        until the Console reports all tests passing.</p>
+
+    <script>
+        // In CHALLENGEs 1-5 you will complete some functions.
+
+        // To do this, translate each 🧠 set of instructions into a working function body
+        // ❗ Functions are scaffolded for you
+        // ❗ Do not rename the functions or their parameters. Work inside the function blocks only
+        // ❗ Watch the Guided Project to learn proper debugging technique
+        // ❗ The first challenge is _partially_ done for you:
+
+        // 👉 CHALLENGE 1
+        function checkName(name) {
+            // 🧠 We will check several aspects of the name and return a validation message:
+            //   * If name is not a string, then return the string "name must be a string"
+            //   * If name is a string but its length is less than 2, return "name must be at least two characters"
+            //   * If name is a string, and has a length bigger than 2, then return the string "OK"
+
+            // ✨ Your code here
+            let result;
+            if (typeof name !== 'string') {
+                result = "name must be a string";
+            } else if (name = "" || name.length < 2) {
+                result = "name must be at least two characters"
+            } else {
+                result = "OK"
+            }
+            return result;
+        }
+        // 👉 CHALLENGE 2
+        function checkCoordinates(x, y) {
+            // 🧠 This function is used inside a Battleship game app.
+            // We will check several aspects of the arguments (x and y), and return a validation message:
+
+            // 1- FIRST check that both x and y are numbers:
+            //    * if either x or y is not of type number, return string "both x and y must be numbers"
+            // 2- THEN check that x is in the correct range for a battleship grid of 8 x 12
+            //    * if x is smaller than 1 or bigger than 8, return string "x must be between 1 and 8"
+            // 3- THEN check that y is in the correct range for a battleship grid of 8 x 12
+            //    * if y is smaller than 1 or bigger than 12, return string "y must be between 1 and 12"
+            // 4- Return string "OK" if everything above checks out
+
+            // ✨ Your code here
+            let battle;
+            if (typeof x !== "number" || typeof y !== "number") {
+                battle = "both x and y must be numbers"
+            } else if (x > 8 || x < 1) {
+                battle = "x must be between 1 and 8"
+            } else if (y > 12 || y < 1) {
+                battle = "y must be between 1 and 12"
+            } else {
+                battle = "OK"
+            }
+            return battle;
+        }
+
+        // 👉 CHALLENGE 3
+        function checkDate(year, month, day) {
+            // 🧠 We will check several aspects of the arguments (year, month, and day), and return a validation message:
+
+            // 1- FIRST check that the year is legit:
+            //   * year is of type number. If not, return string "year must be a number"
+            //   * year is bigger than zero and smaller than 10000. If not, return string "year must be between 1 and 9999"
+            // 2- THEN check that the month is legit:
+            //   * month is of type number. If not, return string "month must be a number"
+            //   * month is bigger than zero and smaller or equal to 12. If not, return string "month must be between 1 and 12"
+            // 3- THEN check that the day is legit:
+            //   * day is of type number. If not, return string "day must be a number"
+            //   * day is bigger than zero and smaller or equal to 31. If not, return string "day must be between 1 and 31"
+            // 4- Return string "OK" if everything above checks out
+            let challenge3;
+            if (typeof year !== "number") {
+                challenge3 = "year must be a number"
+            } else if (0 >= year || 10000 <= year) {
+                challenge3 = "year must be between 1 and 9999"
+            } else if (typeof month !== "number") {
+                challenge3 = "month must be a number"
+            } else if (1 > month || 12 < month) {
+                challenge3 = "month must be between 1 and 12"
+            } else if (typeof day !== "number") {
+                challenge3 = "day must be a number"
+            } else if (1 > day || day > 31) {
+                challenge3 = "day must be between 1 and 31"
+            } else {
+                challenge3 = "OK"
+            }
+            return challenge3
+
+
+
+        }
+
+        // 👉 CHALLENGE 4
+        function checkLine(a, b, c) {
+            // 🧠 This function is used inside a Tic-Tac-Toe game app.
+            // The arguments (a, b, and c) must be correct values for a "line", whether horizontal, vertical or diagonal.
+
+            // Examples of valid values for a, b, c:
+            //    null, null, null (this would be an empty line)
+            //    "X",  null, null (a line marked "X" by first player)
+            //    "X",  "O",  null (a line with an "X" by first player and "O" by second player)
+            //    "X",  "X",  "X"  (these values mean first player has won)
+            //    "O",  "O",  "O"  (these values mean second player has won)
+
+            // Examples of invalid values:
+            //    1,   2,    1   (a, b, c must be either null or "X" or "O")
+            //    "a", "b",  "a" (a, b, c must be either null or "X" or "O")
+            //    "x", null, "o" ("X" and "O" must be capital letters)
+
+            // If the arguments represent a valid line return true, otherwise false.
+
+            // ✨ Your code here
+
+        }
+
+        // 👉 CHALLENGE 5
+        function greet(name, isHappy) {
+            // 🧠 This function constructs a string that greets our users happily or sadly.
+
+            // Examples of use:
+            // greet("Jane", true) // should return the string "Hi, I am Jane and I am happy."
+            // greet("Peter", false) // should return the string "Hi, I am Peter and I am sad."
+
+            // Checking arguments for validity
+            // 1- FIRST use the checkName function from 👉 CHALLENGE 1 to check the validity of name:
+            //    * If the output of checkName(name) is not "OK", greet returns the validation error obtained from checkName
+            // 2- THEN, check that isHappy is a Boolean:
+            //    * If not a Boolean, greet returns the string "isHappy must be a Boolean"
+            // 3- If everything above checks out return the happy or sad greeting as seen in the Examples of use above.
+
+            // ✨ Your code here
+
+        }
+
+        // 🧪 TESTS, do not work below this line
+        // 🧪 TESTS, do not work below this line
+        // 🧪 TESTS, do not work below this line
+        runTests('CHALLENGE 1 - checkName', checkName, [
+            [[null], "name must be a string"],
+            [[1], "name must be a string"],
+            [[''], "name must be at least two characters"],
+            [['x'], "name must be at least two characters"],
+            [['xx'], "OK"],
+        ])
+        runTests('CHALLENGE 2 - checkCoordinates', checkCoordinates, [
+            [[null, null], "both x and y must be numbers"],
+            [[1, null], "both x and y must be numbers"],
+            [[null, 1], "both x and y must be numbers"],
+            [[0, 0], "x must be between 1 and 8"],
+            [[9, 0], "x must be between 1 and 8"],
+            [[1, 0], "y must be between 1 and 12"],
+            [[1, 13], "y must be between 1 and 12"],
+            [[1, 12], "OK"],
+        ])
+        runTests('CHALLENGE 3 - checkDate', checkDate, [
+            [[null], "year must be a number"],
+            [[0], "year must be between 1 and 9999"],
+            [[10000], "year must be between 1 and 9999"],
+            [[1, null], "month must be a number"],
+            [[1, 0], "month must be between 1 and 12"],
+            [[1, 13], "month must be between 1 and 12"],
+            [[1, 1, null], "day must be a number"],
+            [[1, 1, 0], "day must be between 1 and 31"],
+            [[1, 1, 32], "day must be between 1 and 31"],
+            [[1, 1, 31], "OK"],
+        ])
+        runTests('CHALLENGE 4 - checkLine', checkLine, [
+            [[null, null, null], true],
+            [["X", "O", null], true],
+            [["X", "X", "X"], true],
+            [["O", "O", "O"], true],
+            [["X", "", "O"], false],
+            [["", "X", "O"], false],
+            [["X", "O", ""], false],
+            [[1, 2, 1], false],
+            [["a", "b", "a"], false],
+            [["x", null, "o"], false],
+        ])
+        runTests('CHALLENGE 5 - greet', greet, [
+            [[null], "name must be a string"],
+            [[1], "name must be a string"],
+            [[''], "name must be at least two characters"],
+            [['x'], "name must be at least two characters"],
+            [['Peter', 'unhappy'], "isHappy must be a Boolean"],
+            [['Jane', true], "Hi, I am Jane and I am happy."],
+            [['Peter', false], "Hi, I am Peter and I am sad."],
+        ])
+        function runTests(testName, func, tests) {
+            let results = []
+            tests.forEach(test => {
+                const argsList = test[0]
+                const expected = JSON.stringify(test[1])
+                const actual = JSON.stringify(func.apply(null, argsList))
+                results.push([argsList, expected, actual])
+            })
+            console.log('\n' + testName)
+            if (results.every(result => result[1] === result[2])) console.log('\t✅ All tests pass')
+            else if (results.every(result => result[1] !== result[2])) console.log('\t❌ All tests fail')
+            else results.forEach((result, idx) => {
+                if (result[1] === result[2]) console.log(`\t✅ Test ${idx + 1} passes`)
+                else console.log(`\t❌ Test ${idx + 1} fails: ${func.name}(${result[0]
+                    .map(JSON.stringify)}) should return ${result[1]} but returns ${result[2]}`)
+            })
+        }
+    </script>
+</body>
+
+</html>
